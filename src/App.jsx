@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>TESTEdit src/App .js and save to reload.</p>
+        <p>See if deployment works</p>
         <a
           className="App-link"
           href="https://reactjs.org"
