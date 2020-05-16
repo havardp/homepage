@@ -1,21 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>This is where i will showcase my projects</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>This is where i will showcase my projects</h2>
+        <ul>
+          <li>Ninja fighter</li>
+          <li>diverse ntnu prosjekter sykkel/moviedb/handleliste</li>
+          <li>matte android app i sommer</li>
+          <li>visualisering av algoritmer, i sommer</li>
+          <li>frontend+backend app?</li>
+        </ul>
       </header>
     </div>
   );

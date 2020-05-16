@@ -1,12 +1,29 @@
-name: Production Build
+name: Test and deploy
 on:
   pull_request:
   push:
     branches:
       - master
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: test/lint/build with Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn test
+      - run: yarn lint
+      - run: yarn build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS Credentials
